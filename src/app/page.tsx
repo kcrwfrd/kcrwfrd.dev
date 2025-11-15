@@ -38,8 +38,8 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       {/* Header */}
-      <header className="border-b border-border px-6 py-8 md:px-12 lg:px-16">
-        <div className="mx-auto max-w-4xl px-4">
+      <header className="border-b border-border py-8">
+        <div className="mx-auto max-w-4xl px-5">
           <div className="flex items-baseline justify-between">
             <h1 className="font-display text-2xl font-semibold tracking-tight text-foreground md:text-3xl">
               The Journal
@@ -56,7 +56,7 @@ export default function Home() {
         </div>
       </header>
 
-      <main className="mx-auto max-w-4xl px-4">
+      <main className="mx-auto max-w-4xl px-5">
         {/* Featured Article */}
         <article className="border-b border-border py-16 md:py-24">
           <div className="mx-auto max-w-4xl">
