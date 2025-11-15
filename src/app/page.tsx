@@ -72,7 +72,7 @@ export default function Home() {
               {featuredPost.title}
             </h2>
 
-            <p className="mb-12 max-w-2xl text-xl leading-relaxed text-foreground-muted md:text-2xl md:leading-relaxed">
+            <p className="mb-12 max-w-2xl font-light text-xl leading-relaxed text-foreground-muted md:text-2xl md:leading-relaxed">
               {featuredPost.excerpt}
             </p>
 
@@ -117,7 +117,7 @@ export default function Home() {
                   <a href="#">{post.title}</a>
                 </h4>
 
-                <p className="mb-6 leading-relaxed text-foreground-muted">
+                <p className="mb-6 font-light leading-relaxed text-foreground-muted">
                   {post.excerpt}
                 </p>
 
@@ -143,7 +143,7 @@ export default function Home() {
             <h3 className="mb-4 font-display text-3xl font-semibold text-foreground md:text-4xl">
               Subscribe to the Journal
             </h3>
-            <p className="mb-8 text-lg leading-relaxed text-foreground-muted">
+            <p className="mb-8 font-light text-lg leading-relaxed text-foreground-muted">
               Receive new essays and reflections directly in your inbox. No
               spam, just thoughtful writing.
             </p>
@@ -167,7 +167,7 @@ export default function Home() {
       {/* Footer */}
       <footer className="border-t border-border px-6 py-12 text-center md:px-12 lg:px-16">
         <div className="mx-auto max-w-7xl">
-          <p className="text-sm text-foreground-muted">
+          <p className="font-light text-sm text-foreground-muted">
             © 2024 The Journal. All rights reserved.
           </p>
         </div>
