@@ -1,65 +1,100 @@
-import Image from 'next/image'
+const featuredPost = {
+  title: 'On the Nature of Time and Memory',
+  excerpt:
+    'An exploration of how our perception of time shapes the stories we tell ourselves, and how memory becomes the architecture of identity.',
+  date: 'March 15, 2024',
+  readTime: '12 min read',
+  category: 'Essay',
+}
+
+const recentPosts = [
+  {
+    title: 'The Silence Between Notes',
+    excerpt:
+      'What jazz taught me about the spaces we leave unfilled, and why restraint is the highest form of expression.',
+    date: 'March 8, 2024',
+    readTime: '8 min read',
+    category: 'Reflection',
+  },
+  {
+    title: 'Walking Through Cities at Dawn',
+    excerpt:
+      'There is something about the early morning light that reveals a city in its most honest state, before the performance begins.',
+    date: 'February 28, 2024',
+    readTime: '6 min read',
+    category: 'Travel',
+  },
+  {
+    title: 'The Art of Slow Reading',
+    excerpt:
+      'In an age of information overload, returning to the deliberate pace of deep reading feels like an act of rebellion.',
+    date: 'February 18, 2024',
+    readTime: '10 min read',
+    category: 'Literature',
+  },
+]
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{' '}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{' '}
-            or the{' '}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{' '}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+    <main className="w-full mx-auto max-w-4xl px-5">
+      <Post post={featuredPost} />
+      {recentPosts.map((post) => (
+        <Post key={post.title} post={post} />
+      ))}
+    </main>
+  )
+}
+
+type Post = {
+  title: string
+  excerpt: string
+  date: string
+  readTime: string
+  category: string
+}
+
+function Post({
+  post: { title, excerpt, date, readTime, category },
+}: {
+  post: Post
+}) {
+  return (
+    <article className="border-b border-border last:border-none py-16 md:py-24">
+      <div className="mb-6 flex items-center gap-3 text-sm font-medium text-foreground-muted">
+        <span className="text-accent">{category}</span>
+        <span className="text-border">•</span>
+        <time>{date}</time>
+        <span className="text-border">•</span>
+        <span>{readTime}</span>
+      </div>
+
+      <h2 className="mb-8 font-display text-4xl font-semibold leading-tight tracking-tight text-foreground md:text-5xl lg:text-6xl">
+        {title}
+      </h2>
+
+      <p className="mb-12 max-w-2xl font-light text-xl leading-relaxed text-foreground-muted md:text-2xl md:leading-relaxed">
+        {excerpt}
+      </p>
+
+      <a
+        href="#"
+        className="inline-flex items-center gap-2 font-display text-lg font-medium text-foreground transition-colors hover:text-accent"
+      >
+        Read article
+        <svg
+          className="h-5 w-5"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M17 8l4 4m0 0l-4 4m4-4H3"
+          />
+        </svg>
+      </a>
+    </article>
   )
 }
