@@ -32,12 +32,12 @@ export default function RootLayout({
       <body
         className={`${crimsonPro.variable} ${spectral.variable} antialiased`}
       >
-        <div className="min-h-screen">
+        <div className="min-h-screen flex flex-col">
           {/* Header */}
           <header className="border-b border-border py-8">
             <div className="mx-auto max-w-4xl px-5">
               <div className="flex items-baseline justify-between">
-                <h1 className="font-display text-2xl font-semibold tracking-tight text-foreground md:text-3xl">
+                <h1 className="font-display text-2xl font-semibold tracking-tight text-foreground md:text-3xl text-balance">
                   Kevin Crawford, Software Engineer
                 </h1>
                 <nav className="flex gap-6 text-sm font-medium text-foreground-muted md:gap-8 md:text-base">
@@ -61,7 +61,7 @@ export default function RootLayout({
           {children}
 
           {/* Footer */}
-          <footer className="border-t border-border px-6 py-12 text-center md:px-12 lg:px-16">
+          <footer className="border-t border-border px-6 py-12 text-center md:px-12 lg:px-16 mt-auto">
             <div className="mx-auto max-w-7xl">
               <p className="font-light text-sm text-foreground-muted">
                 © 2013 - {new Date().getFullYear()} Kevin Crawford. All rights
