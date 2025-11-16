@@ -43,7 +43,8 @@
 @media (prefers-color-scheme: dark) {
   :root {
     /* Dark theme - Cool charcoal palette */
-    --background: #1e2128;
+    /* --background: #1e2128; */
+    --background: rgb(40, 44, 53);
     --surface: #252930;
     --foreground: #fcfdfe;
     --foreground-muted: #b0b5c1;
@@ -89,5 +90,8 @@ body {
 
 /* Smooth transitions for theme switching */
 * {
-  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease;
 }
